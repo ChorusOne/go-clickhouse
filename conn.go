@@ -48,7 +48,7 @@ func newConn(cfg *Config) *conn {
 		logger = log.New(os.Stderr, "clickhouse: ", log.LstdFlags)
 	}
 	c := &conn{
-		url:                cfg.url(map[string]string{"default_format": "TabSeparatedWithNamesAndTypes"}, false),
+		url:                cfg.url(map[string]string{"default_format": "TabSeparatedWithNamesAndTypes"}, true),
 		location:           cfg.Location,
 		useDBLocation:      cfg.UseDBLocation,
 		useGzipCompression: cfg.GzipCompression,
